@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="menu">
+      <hgroup class="mb-1">
+        <h3>E-Mails automatisch befüllen</h3>
+        <h4>Einfach Datensatz reinkopieren und E-Mail vorbefüllen lassen</h4>
+      </hgroup>
+
+      <div class="grid">
+        <div class="headings mb-0">
+          <h4>Input</h4>
+          <input type="text" id="email-data" name="email-data" />
+        </div>
+
+        <div class="headings">
+          <h4>Kontrolle</h4>
+
+          <div class="flex-container">
+            <label for="salutation">
+              Anrede
+              <select id="salutation">
+                <option value="">-</option>
+                <option>Frau</option>
+                <option>Herr</option>
+              </select>
+            </label>
+
+            <label for="lastname">
+              Nachname
+              <input type="text" id="lastname" name="lastname" />
+            </label>
+          </div>
+
+          <label for="email">
+            E-Mail
+            <input type="text" id="email" name="email" />
+          </label>
+
+          <div class="flex-container">
+            <label for="meeting-date">
+              Datum
+              <input type="date" id="meeting-date" name="meeting-date" />
+            </label>
+
+            <label for="meeting-time">
+              Uhrzeit
+              <input type="time" id="meeting-time" name="meeting-time" />
+            </label>
+          </div>
+        </div>
+
+        <details>
+          <summary role="button" class="secondary">Vorlagen</summary>
+
+          <div class="headings">
+            <h4>Anschreiben</h4>
+            <textarea name="vorlage1" id="vorlage1" rows="4"></textarea>
+          </div>
+
+          <div class="headings">
+            <h4>Bestätigung</h4>
+            <textarea name="vorlage2" id="vorlage2" rows="4"></textarea>
+          </div>
+        </details>
+
+        <div class="flex-container sticky">
+          <button id="fill-email-1">Vorlage 1 ausfüllen</button>
+          <button id="fill-email-2">Vorlage 2 ausfüllen</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="popup.js"></script>
+  </body>
+</html>

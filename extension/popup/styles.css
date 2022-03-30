@@ -1,0 +1,37 @@
+body {
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 0.5rem 2rem 0 1rem;
+}
+
+#menu {
+  width: 600px;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.flex-container {
+  display: flex;
+  gap: 10px;
+}
+
+.flex-container > * {
+  flex: 1 1 auto;
+}
+
+.sticky {
+  position: sticky;
+  bottom: 0;
+  background: var(--background-color);
+  padding-top: var(--spacing);
+}
+
+.mb-0 {
+  margin-bottom: 0;
+}
+
+.mb-1 {
+  margin-bottom: var(--spacing);
+}

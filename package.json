@@ -1,0 +1,12 @@
+{
+  "name": "emails-from-template",
+  "version": "0.0.1",
+  "description": "A browser extension to create personalozed emails from templates",
+  "license": "MIT",
+  "scripts": {
+    "start": "web-ext run --source-dir ./extension/"
+  },
+  "devDependencies": {
+    "web-ext": "^6.8.0"
+  }
+}
