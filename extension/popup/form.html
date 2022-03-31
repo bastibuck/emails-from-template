@@ -63,19 +63,36 @@
           <summary role="button" class="secondary">Vorlagen</summary>
 
           <div class="headings">
-            <h4>Anschreiben</h4>
-            <textarea name="vorlage1" id="vorlage1" rows="4"></textarea>
+            <h4>Voruntersuchung</h4>
+            <label for="subject1">
+              Betreff
+              <input type="text" id="subject1" name="subject1" />
+            </label>
+
+            <label for="vorlage1">
+              Text
+              <textarea name="vorlage1" id="vorlage1" rows="4"></textarea>
+            </label>
           </div>
 
           <div class="headings">
-            <h4>Bestätigung</h4>
-            <textarea name="vorlage2" id="vorlage2" rows="4"></textarea>
+            <h4>MRT Termin</h4>
+
+            <label for="subject2">
+              Betreff
+              <input type="text" id="subject2" name="subject2" />
+            </label>
+
+            <label for="vorlage2">
+              Text
+              <textarea name="vorlage2" id="vorlage2" rows="4"></textarea>
+            </label>
           </div>
         </details>
 
         <div class="flex-container sticky">
-          <button id="fill-email-1">Vorlage 1 ausfüllen</button>
-          <button id="fill-email-2">Vorlage 2 ausfüllen</button>
+          <button id="fill-email-1">Voruntersuchung ausfüllen</button>
+          <button id="fill-email-2">MRT Termin ausfüllen</button>
         </div>
       </div>
     </div>
