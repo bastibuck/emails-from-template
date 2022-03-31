@@ -60,7 +60,7 @@ inputText.addEventListener("input", function (event) {
     ? cols[3].replace(" Uhr", "").split(" ")
     : ["", ""];
 
-  date.value = `2022-${dateValue.split(".")[0]}-${dateValue.split(".")[1]}`;
+  date.value = `2022-${dateValue.split(".")[1]}-${dateValue.split(".")[0]}`;
   time.value = timeValue;
 });
 
@@ -79,12 +79,19 @@ function messageContentScript(vorlage) {
       newBody = vorlage2TextArea.value;
     }
 
+    const dateObj = new Date(date.value);
+    const humanDate = `${dateObj.getDate().toString().padStart("2", "0")}.${(
+      dateObj.getMonth() + 1
+    )
+      .toString()
+      .padStart("2", "0")}.`;
+
     newBody = newBody.replace(/###salutation###/g, salutation.value);
     newBody = newBody.replace(/###lastname###/i, lastName.value);
-    newBody = newBody.replace(/###date###/g, date.value);
+    newBody = newBody.replace(/###date###/g, humanDate);
     newBody = newBody.replace(/###time###/g, time.value);
 
-    newSubject = newSubject.replace(/###date###/g, date.value);
+    newSubject = newSubject.replace(/###date###/g, humanDate);
     newSubject = newSubject.replace(/###time###/g, time.value);
 
     const payload = {
