@@ -51,8 +51,7 @@ vorlage2TextArea.addEventListener("input", function (event) {
 inputText.addEventListener("input", function (event) {
   const cols = event.target.value.split(";");
 
-  salutation.value =
-    cols[0] === "weiblich" ? "Frau" : cols[0] === "männlich" ? "Herr" : "";
+  salutation.value = cols[0] === "w" ? "Frau" : cols[0] === "m" ? "Herr" : "";
   lastName.value = cols[1] ?? "";
   email.value = cols[2] ?? "";
 
