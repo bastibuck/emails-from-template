@@ -1,16 +1,11 @@
 chrome.runtime.onMessage.addListener(async (payload, sender, sendResponse) => {
-  console.log({ payload });
+  const subjectField = document.querySelector(
+    "[placeholder='Betreff hinzufügen']"
+  );
+  subjectField.value = payload.subject;
 
-  // TODO! set values of fields based on payload
-
-  const body = document.createElement("div");
-  body.innerText = payload.body;
-
-  const subject = document.createElement("h1");
-  subject.innerText = payload.subject + payload.to;
-
-  document.body.innerHTML = ``;
-  document.body.append(subject, body);
+  const bodyField = document.querySelector("[aria-label='Nachrichtentext']");
+  bodyField.innerHTML = payload.body;
 
   return true;
 });
