@@ -66,13 +66,16 @@ inputText.addEventListener("input", function (event) {
 
 function messageContentScript(vorlage) {
   chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+    let newSubject = "";
     let newBody = "";
 
     if (vorlage === 1) {
+      newSubject = subject1Input.value;
       newBody = vorlage1TextArea.value;
     }
 
     if (vorlage === 2) {
+      newSubject = subject2Input.value;
       newBody = vorlage2TextArea.value;
     }
 
@@ -81,8 +84,11 @@ function messageContentScript(vorlage) {
     newBody = newBody.replace(/###date###/g, date.value);
     newBody = newBody.replace(/###time###/g, time.value);
 
+    newSubject = newSubject.replace(/###date###/g, date.value);
+    newSubject = newSubject.replace(/###time###/g, time.value);
+
     const payload = {
-      subject: `Neue E-Mail aus Vorlage ${vorlage} an `,
+      subject: newSubject,
       body: newBody,
       to: email.value,
     };
