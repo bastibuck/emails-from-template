@@ -7,7 +7,7 @@
   "content_security_policy": "script-src 'self' https://unpkg.com; object-src 'self'",
   "name": "Personalized emails from templates",
   "description": "Create personalized emails from templates",
-  "permissions": ["tabs", "storage"],
+  "permissions": ["tabs", "storage", "clipboardWrite", "clipboardRead"],
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
